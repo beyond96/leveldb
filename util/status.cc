@@ -18,6 +18,7 @@ const char* Status::CopyState(const char* state) {
   return result;
 }
 
+// 将msg与msg2的错误信息整合，并连在一起
 Status::Status(Code code, const Slice& msg, const Slice& msg2) {
   assert(code != kOk);
   const uint32_t len1 = static_cast<uint32_t>(msg.size());
